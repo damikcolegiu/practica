@@ -99,94 +99,106 @@
         </section>
 
         <section id="cap2" class="glass-card">
-            <h2><i class="fa-solid fa-cubes"></i> Cap. 2. Unitatea de învățare: Constructori și Destructori în POO</h2>
-            <p class="section-desc">Studiu individual academic privind gestionarea întregului ciclu de viață al obiectelor în paradigma Programării Orientate pe Obiecte.</p>
+            <h2><i class="fa-solid fa-cubes"></i> Cap. 2. Unitatea de învățare: Cum funcționează Obiectele (Constructori și Destructori)</h2>
+            <p class="section-desc">Pe înțelesul tuturor: Cum se creează, cum se folosesc și cum se șterg obiectele din memorie în programare.</p>
             
             <div class="info-box">
                 <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
                 <div class="info-text">
-                    <strong>Subiect Analizat:</strong> Mecanismele fundamentale de alocare, inițializare a stării obiectelor și de eliberare a resurselor ocupate în memorie prin utilizarea constructorilor și a destructorilor.
+                    <strong>De ce avem nevoie de constructori?</strong> Când creăm o variabilă simplă (cum ar fi un număr: <code>int x = 10;</code>), îi putem da o valoare direct. Dar când creăm un obiect complex (care are mai multe reguli și date în el), nu îi putem pune valori la întâmplare. Avem nevoie de o funcție specială numită <strong>constructor</strong> care să pregătească obiectul și să îi dea valorile de pornire corecte.
                 </div>
             </div>
 
-            <h3>A) Prezentarea conceptului teoretic</h3>
-            <p><strong>Constructori:</strong> Un constructor este o funcție sau metodă specială a unei clase care este invocată în mod automat de către sistem în momentul în care se creează o nouă instanță (un obiect). Rolul său principal este de a aloca spațiul necesar în memorie, de a inițializa atributele obiectului și de a asigura o stare inițială validă, sigură și consistentă.</p>
-            <p><strong>Destructori:</strong> Un destructor este o metodă specială apelată în mod automat în momentul în care ciclul de viață al unui obiect se încheie (de exemplu, când obiectul părăsește contextul său de execuție) și acesta urmează să fie eliminat din memorie. Scopul său principal este de a efectua operațiuni de curățare și de a elibera resursele externe ocupate.</p>
+            <h3>A) Tipurile de Constructori</h3>
+            <p>Un constructor este o funcție din interiorul clasei care se execută <strong>automat</strong> fix în momentul în care creăm un obiect. Are două reguli simple de scris: poartă exact același nume cu clasa și nu are niciun tip returnat (nu scriem <code>int</code>, <code>void</code> sau altceva înaintea lui).</p>
             
-            <p><strong>Caracteristici principale:</strong></p>
-            <ul class="fancy-list">
-                <li><i class="fa-solid fa-terminal"></i> Constructorii au de regulă același nume cu cel al clasei și nu returnează un tip de date explicit (nici măcar tipul general <code>void</code>).</li>
-                <li><i class="fa-solid fa-terminal"></i> Multe limbaje orientate pe obiecte permit supraîncărcarea constructorilor (definirea mai multor constructori cu parametri diferiți pentru aceeași clasă, oferind flexibilitate la instanțiere).</li>
-                <li><i class="fa-solid fa-terminal"></i> Destructorii nu pot primi niciodată parametri și nu pot fi supraîncărcați, existând un singur destructor unic per clasă.</li>
-            </ul>
-
-            <h3>B) Explicarea modului de utilizare</h3>
-            <p>În dezvoltarea de aplicații software, constructorii sunt indispensabili deoarece previn apariția obiectelor instabile sau parțial configurate în memorie, permițând injectarea dependențelor și definirea configurărilor obligatorii. Destructorii devin esențiali atunci când obiectele gestionează resurse critice de sistem care nu sunt curățate automat de către runtime (cum ar fi conexiuni active la baze de date, pointeri de memorie brută, socket-uri de rețea sau fișiere deschise pe disc), asigurându-se că acestea nu rămân blocate după distrugerea fizică a obiectului.</p>
-
+            <p>O clasă poate avea mai mulți constructori (acest lucru se numește supraîncărcare), împărțiți în trei categorii:</p>
+            
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Concept</th>
-                            <th>Avantaje</th>
-                            <th>Dezavantaje / Limitări</th>
+                            <th>Tip Constructor</th>
+                            <th>Ce face mai exact?</th>
+                            <th>Regulă importantă</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Constructori</strong></td>
-                            <td>Garantează consistența și validitatea datelor din momentul instanțierii; oferă flexibilitate majoră prin mecanismul de supraîncărcare.</td>
-                            <td>Gestionarea erorilor în interiorul lor poate fi complexă; includerea unei logici prea lungi sau grele încetinește crearea obiectelor.</td>
+                            <td><strong>Implicit (fără parametri)</strong></td>
+                            <td>Nu primește nicio informație (parantezele sunt goale). Pune valori de bază (cum ar fi 0 sau text gol) în interiorul obiectului.</td>
+                            <td>Dacă programatorul nu scrie niciun constructor, calculatorul îl creează singur pe acesta. Dar dacă programatorul scrie un alt constructor, cel automat dispare.</td>
                         </tr>
                         <tr>
-                            <td><strong>Destructori</strong></td>
-                            <td>Automatizează curățarea memoriei și a conexiunilor; previn apariția scurgerilor de memorie (memory leaks) și blocarea resurselor hardware.</td>
-                            <td>În sistemele cu management automat al memoriei (precum Garbage Collectors), momentul exact al rulării lor poate fi imprevizibil (nedeterminist).</td>
+                            <td><strong>Cu parametri</strong></td>
+                            <td>Primește date din exterior atunci când creăm obiectul, pentru a-l configura direct cu ce avem nevoie.</td>
+                            <td>Parametrii pot avea valori implicite (adică predefinite), ca să nu fim obligați să le completăm mereu.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>De copiere</strong></td>
+                            <td>Creează un obiect <strong>NOU</strong> luând ca model un obiect care există deja. Face practic o clonă.</td>
+                            <td>Se folosește când trimitem un obiect ca parametru într-o funcție sau când o funcție ne returnează un obiect.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3>C) Exemple practice (Pseudocod / Structură Conceptuală)</h3>
-            <p>Mai jos este prezentat un exemplu care ilustrează structura logică standard pentru implementarea acestor concepte în cadrul unei clase:</p>
+            <h3>B) Diferența dintre a Copia și a Atribui un obiect</h3>
+            <p>Este foarte important să nu încurcăm <strong>constructorul de copiere</strong> cu operația de <strong>atribuire (asignare)</strong>, pentru că în memorie lucrurile se întâmplă complet diferit:</p>
+            
+            <ul class="fancy-list">
+                <li><i class="fa-solid fa-clone"></i> <strong>Copierea Reală (Constructorul de copiere):</strong> Se folosește când creăm un obiect nou-nouț pe baza unuia vechi. Calculatorul alocă un spațiu de memorie complet separat pentru noul obiect și mută datele acolo. Dacă modificăm noul obiect, cel vechi rămâne intact.</li>
+                <li><i class="fa-solid fa-link-slash"></i> <strong>Atribuirea (Ex: <code>obiect1 = obiect2</code>):</strong> Se folosește când ambele obiecte există deja. Aici nu se creează nimic nou, ci se face o <strong>copiere de referință</strong>. Asta înseamnă că ambele nume vor arăta spre același loc din memorie. Dacă modifici ceva în <code>obiect1</code>, se va schimba automat și în <code>obiect2</code>, pentru că ele împart aceeași memorie.</li>
+            </ul>
 
-<pre><code><span class="code-comment">// Definirea clasei conceptuale</span>
-<span class="code-keyword">Clasa</span> <span class="code-title">GestionarResursa</span>
-{
-    <span class="code-comment">// Atribut privat</span>
-    <span class="code-keyword">Privat</span> Text numeResursa
+            <h3>C) Destructorul (Cum se șterg obiectele)</h3>
+            <p>Dacă constructorul se ocupă de „nașterea” obiectului, destructorul se ocupă de „moartea” lui. Este o funcție specială care are numele clasei, dar este precedată de semnul tildă (<code>~</code>). El curăță memoria și resurselor folosite de obiect înainte ca acesta să dispară.</p>
+            
+            <p><strong>Regulile lui sunt foarte stricte:</strong></p>
+            <ul class="fancy-list">
+                <li><i class="fa-solid fa-clock"></i> Se apelează singur (automat) atunci când programul termină treaba cu acel obiect.</li>
+                <li><i class="fa-solid fa-ban"></i> Există un singur destructor per clasă. Nu poate primi parametri și nu returnează nimic.</li>
+                <li><i class="fa-solid fa-arrow-down-up-numeric"></i> <strong>Ordinea inversă:</strong> Obiectele se șterg în ordine inversă față de cum au fost create (ultimul obiect creat va fi primul șters).</li>
+            </ul>
 
-    <span class="code-comment">// 1. Constructor implicit (fără parametri)</span>
-    <span class="code-keyword">Public</span> <span class="code-title">GestionarResursa</span>()
-    {
-        numeResursa = <span class="code-string">"Implicită"</span>
-        Afișează(<span class="code-string">"Constructor apelat: Resursa implicită a fost configurată."</span>)
+            <h3>D) La ce ne ajută cuvântul cheie 'this'?</h3>
+            <p>Cuvântul cheie <code>this</code> înseamnă pur și simplu „obiectul curent”. Calculatorul îl folosește în două situații principale:</p>
+            <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #cbd5e1; font-weight: 300;">
+                <li style="margin-bottom: 0.5rem;"><strong>Când numele coincid:</strong> Dacă un parametru din constructor are același nume cu un atribut din clasă, folosim <code>this</code> ca să arătăm care este al obiectului. (Exemplu: <code>this.varsta = varsta;</code> înseamnă că vârsta obiectului primește valoarea din parametrul vârstă).</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Pentru apeluri în lanț:</strong> Permite unei funcții să returneze textul <code>return this;</code>, ceea ce ne lasă să legăm mai multe comenzi una după alta pe o singură linie de cod.</li>
+            </ol>
+
+            <h3>E) Exemplu Practic: Clasa Array (Gestionarea unui Vector)</h3>
+            <p>Următorul exemplu arată cum folosim constructorii, destructorul și pe <code>this</code> într-o clasă care gestionează un vector (o listă de numere):</p>
+
+<pre><code><span class="code-keyword">class</span> <span class="code-title">Array</span> {
+    <span class="code-keyword">private int</span>[] t; <span class="code-comment">// Vectorul nostru de numere</span>
+    <span class="code-keyword">private int</span> c;   <span class="code-comment">// Capacitatea (câte numere încap în el)</span>
+
+    <span class="code-comment">// 1. Constructorul cu parametri (Creează vectorul cu dimensiunea cerută)</span>
+    <span class="code-keyword">public</span> <span class="code-title">Array</span>(<span class="code-keyword">int</span> k) {
+        <span class="code-keyword">this</span>.c = k;          <span class="code-comment">// Folosim 'this' pentru a nu încurca variabilele</span>
+        <span class="code-keyword">this</span>.t = <span class="code-keyword">new int</span>[c]; <span class="code-comment">// Alocăm spațiu în memorie</span>
     }
 
-    <span class="code-comment">// 2. Constructor cu parametri (Supraîncărcare)</span>
-    <span class="code-keyword">Public</span> <span class="code-title">GestionarResursa</span>(Text nume)
-    {
-        numeResursa = nume
-        Afișează(<span class="code-string">"Constructor apelat: Resursa "</span> + nume + <span class="code-string">" a fost configurată."</span>)
+    <span class="code-comment">// 2. Constructorul de copiere (Face o clonă reală într-un spațiu nou)</span>
+    <span class="code-keyword">public</span> <span class="code-title">Array</span>(Array other) {
+        <span class="code-keyword">this</span>.c = other.c;    <span class="code-comment">// Luăm dimensiunea de la celălalt vector</span>
+        <span class="code-keyword">this</span>.t = <span class="code-keyword">new int</span>[c]; <span class="code-comment">// CRITIC: Alocăm spațiu NOU în memorie ca să fie independenți!</span>
+        
+        <span class="code-comment">// Copiem numerele unul câte unul</span>
+        <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = <span class="code-number">0</span>; i &lt; <span class="code-keyword">this</span>.c; i++) {
+            <span class="code-keyword">this</span>.t[i] = other.t[i];
+        }
     }
 
-    <span class="code-comment">// Metodă pentru utilizarea obiectului</span>
-    <span class="code-keyword">Public</span> <span class="code-title">Functionalitate</span>()
-    {
-        Afișează(<span class="code-string">"Se execută operațiuni cu resursa: "</span> + numeResursa)
-    }
-
-    <span class="code-comment">// 3. Destructor</span>
-    <span class="code-title">Metodă_Destruct</span>()
-    {
-        Afișează(<span class="code-string">"Destructor apelat: Resursa "</span> + numeResursa + <span class="code-string">" a fost eliberată."</span>)
+    <span class="code-comment">// 3. Destructorul (Anunță când vectorul este șters)</span>
+    ~<span class="code-title">Array</span>() {
+        Console.WriteLine(<span class="code-string">"Obiectul a fost șters din memorie, iar resursele au fost eliberate."</span>);
     }
 }</code></pre>
 
-            <p><strong>Explicația funcționării codului:</strong> Când programul instanțiază un nou obiect trimitând un parametru de tip text, se execută automat al doilea constructor. Obiectul își desfășoară activitatea prin metodele sale standard (cum ar fi <code>Functionalitate()</code>). În momentul în care execuția părăsește contextul de valabilitate al obiectului, mecanismul de management al memoriei apelează destructorul clasei pentru a închide în siguranță resursele active.</p>
-
-            <h3>D) Concluzii</h3>
-            <p>Managementul corect al constructorilor și destructorilor reprezintă pilonul central al stabilității unei aplicații software dezvoltate pe baza paradigmei POO. Înțelegerea completă a momentului în care un obiect ia naștere și a momentului în care este eliminat ajută la scrierea unui cod curat, stabil și optimizat din punct de vedere al utilizării resurselor hardware ale sistemului.</p>
+            <p><strong>De ce a fost important constructorul de copiere aici?</strong> Dacă nu îl scriam și făceam o simplă atribuire (<code>vector1 = vector2</code>), amândouă ar fi folosit același tabel de numere din memorie. Când s-ar fi modificat un număr în <code>vector1</code>, s-ar fi stricat automat și în <code>vector2</code>. Datorită constructorului de copiere de mai sus, fiecare are tabelul lui separat și funcționează independent, fără erori.</p>
         </section>
 
         <section id="cap3" class="glass-card">
