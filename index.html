@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoliu Premium - Stagiu de Practică</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            background-color: #1a1e26; /* Fundal închis profesional în caz de transparență */
+            position: relative;
+        }
+
+        .processed-profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%; /* Centrează pe zona feței și a ochilor */
+            filter: brightness(108%) contrast(104%) saturate(95%);
+            transition: all 0.3s ease;
+        }
+
+        .avatar-container:hover .processed-profile-pic {
+            filter: brightness(112%) contrast(108%) saturate(100%);
+            transform: scale(1.05);
+        }
+
+        .signature-image {
+            display: block;
+            margin-top: 0.5rem;
+            max-width: 180px;
+            height: auto;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-code"></i> Portofoliu<span>Practică</span></div>
+            <ul>
+                <li><a href="#descriere"><i class="fa-solid fa-user"></i> Profil</a></li>
+                <li><a href="#cap1"><i class="fa-solid fa-calendar-days"></i> Cap. 1 Planificare</a></li>
+                <li><a href="#cap2"><i class="fa-solid fa-book"></i> Cap. 2 Teorie POO</a></li>
+                <li><a href="#cap3"><i class="fa-solid fa-brain"></i> Cap. 3 Problemă</a></li>
+                <li><a href="#experiente"><i class="fa-solid fa-star"></i> Experiențe</a></li>
+                <li><a href="#declaratie"><i class="fa-solid fa-signature"></i> Declarație</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <span class="badge">Raport Academic Oficial</span>
+            <h1>Raport Stagiu de Practică</h1>
+            <p>Evidența activităților, competențelor și analizelor algoritmice realizate în cadrul stagiului</p>
+            <div class="header-shapes">
+                <div class="shape circle1"></div>
+                <div class="shape circle2"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="descriere" class="glass-card">
+            <h2><i class="fa-solid fa-id-card"></i> Descrierea Stagiarului (Profil Profesional)</h2>
+            <div class="cv-grid">
+                <div class="cv-sidebar">
+                    <div class="avatar-container">
+                        <img src="me.png" alt="Luca Damian - Profil Profesional" class="processed-profile-pic">
+                    </div>
+                    <h3>Date Personale</h3>
+                    <p><i class="fa-solid fa-signature"></i> <strong>Nume:</strong> Luca</p>
+                    <p><i class="fa-solid fa-user"></i> <strong>Prenume:</strong> Damian</p>
+                    <p><i class="fa-solid fa-graduation-cap"></i> <strong>Instituție:</strong> CEEF</p>
+                    <p><i class="fa-solid fa-laptop-code"></i> <strong>Specialitate:</strong> Dezvoltarea Aplicatiilor Web</p>
+                </div>
+                <div class="cv-main">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Cunoștințe Acumulate</h3>
+                    <p>Pe parcursul studiilor și al acestui stagiu de practică, am aprofundat mecanismele fundamentale ale programării structurate și ale celei orientate pe obiecte, dezvoltând o abordare riguroasă în designul arhitectural de cod.</p>
+                    
+                    <h3><i class="fa-solid fa-layer-group"></i> Competențe Profesionale</h3>
+                    <ul class="fancy-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Gândire algoritmică și rezolvarea problemelor complexe folosind metoda Programării Dinamice.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Lucrul cu structuri de date, gestionarea manuală a tablourilor și optimizarea algoritmilor.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Abilități de analiză cod, debugging și gestionare a ciclului de viață al obiectelor.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Capacitatea de a documenta riguros sarcinile zilnice și de a redacta rapoarte tehnice clare.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="cap1" class="glass-card">
+            <h2><i class="fa-solid fa-route"></i> Cap. 1. Planificarea activităților zilnice</h2>
+            <p class="section-desc">Monitorizarea zilnică a progresului și îndeplinirea obiectivelor stabilite în agendă:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-clock"></i> Ziua</th>
+                            <th><i class="fa-solid fa-bullseye"></i> Obiective planificate</th>
+                            <th><i class="fa-solid fa-square-check"></i> Sarcini realizate</th>
+                            <th><i class="fa-solid fa-comment-dots"></i> Comentarii</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Ziua 1</strong></td><td>Am planificat sa fac problema m1.9</td><td>Am realizat problema m1.9</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 2</strong></td><td>am planificat problema m2.19</td><td>am realizat problema m2.19</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 3</strong></td><td>am planificat sa fac problemele m3.13 si m3.33</td><td>am realizat problemele m3.13 si m3.33</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 4</strong></td><td>am planificat sa fac problema m4.8</td><td>am realizat problema m4.8</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 5</strong></td><td>am planificat sa fac problema m5.7</td><td>am realizat problema m5.7</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 6</strong></td><td>am planificat sa fac problema m6.19</td><td>am realizat problema m6.19</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 7</strong></td><td>am planificat sa fac problema m6.8</td><td>am realizat problema m6.8</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 8</strong></td><td>am planificat sa fac problema POO 1</td><td>am realizat problema POO 1</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 9</strong></td><td>am planificat sa fac problema POO 16</td><td>am realizat problema POO 16</td><td><span class="status-badge done">realizat cu succes</span></td></tr>
+                        <tr><td><strong>Ziua 10</strong></td><td>am planificat sa fac raportul</td><td>am realizat raportul</td><td><span class="status-badge complete">completat integral</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="cap2" class="glass-card">
+            <h2><i class="fa-solid fa-cubes"></i> Cap. 2. Unitatea de învățare: Cum funcționează Obiectele (Constructori și Destructori)</h2>
+            <p class="section-desc">Conceptul general: Cum se creează, cum se copiază și cum se eliberează obiectele din memorie.</p>
+            
+            <div class="info-box">
+                <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
+                <div class="info-text">
+                    <strong>De ce avem nevoie de constructori?</strong> Când definim o variabilă simplă, îi putem atribui o valoare direct. În schimb, un obiect complex necesită reguli specifice de inițializare a stării sale interne. Constructorul este funcția responsabilă de alocarea corectă a resurselor și setarea stării inițiale sigure.
+                </div>
+            </div>
+
+            <h3>A) Tipurile de Constructori</h3>
+            <p>Un constructor se execută automat la instanțierea unui obiect. Acesta poartă numele clasei și nu returnează niciun tip de date.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tip Constructor</th>
+                            <th>Rol Funcțional</th>
+                            <th>Regulă de Bază</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Implicit (fără parametri)</strong></td>
+                            <td>Inițializează atributele obiectului cu valori predefinite de bază (0, null, etc.).</td>
+                            <td>Dacă nu este definit explicit niciun constructor, mediul de execuție îl generează automat. Dispare dacă adăugăm un constructor personalizat.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cu parametri</strong></td>
+                            <td>Configurează obiectul în mod direct utilizând date furnizate din exterior în momentul instanțierii.</td>
+                            <td>Permite utilizarea parametrilor impliciți pentru a evita obligativitatea completării tuturor argumentelor.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>De copiere</strong></td>
+                            <td>Creează o entitate nouă prin duplicarea stării unui obiect existent.</td>
+                            <td>Este esențial pentru a preveni partajarea accidentală a zonelor de memorie dinamică între obiecte distincte.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>B) Diferența dintre Copiere și Atribuire</h3>
+            <p>Este critic să diferențiem copierea la inițializare de operația de atribuire ulterioară:</p>
+            
+            <ul class="fancy-list">
+                <li><i class="fa-solid fa-clone"></i> <strong>Constructorul de copiere:</strong> Intervine exclusiv la crearea unui obiect nou. Acesta alocă un spațiu de memorie independent și duplică valorile obiectului sursă, garantând izolarea completă a celor două entități.</li>
+                <li><i class="fa-solid fa-link-slash"></i> <strong>Operatorul de atribuire:</strong> Se aplică atunci când ambele entități sunt deja existente în memorie. În lipsa unei redefiniri clare, o simplă atribuire de referințe sau pointeri face ca ambele variabile să indice aceeași zonă de memorie, generând efecte secundare la modificarea uneia dintre ele.</li>
+            </ul>
+
+            <h3>C) Destructorul și Managementul Resurselor</h3>
+            <p>Destructorul asigură eliberarea resurselor ocupate de un obiect atunci când ciclul său de viață se încheie. Esențial precedat de simbolul tildă (<code>~</code>).</p>
+            
+            <ul class="fancy-list">
+                <li><i class="fa-solid fa-clock"></i> Este invocat în mod automat de către sistem la ieșirea din domeniul de vizibilitate al obiectului.</li>
+                <li><i class="fa-solid fa-ban"></i> O clasă are un singur destructor; acesta nu acceptă parametri și nu returnează valori.</li>
+                <li><i class="fa-solid fa-arrow-down-up-numeric"></i> <strong>Ordinea de distrugere:</strong> Obiectele locale dintr-un bloc sunt distruse în ordine inversă față de ordinea creării lor.</li>
+            </ul>
+
+            <h3>D) Utilitatea pointerului/referinței 'this'</h3>
+            <p>Cuvântul cheie <code>this</code> reprezintă o referință directă către instanța curentă a obiectului:</p>
+            <ol style="margin-left: 2rem; margin-bottom: 1.5rem; color: #cbd5e1; font-weight: 300;">
+                <li style="margin-bottom: 0.5rem;"><strong>Rezolvarea conflictelor de nume:</strong> Diferențiază atributele clasei de parametrii constructorului atunci când aceștia poartă aceleași denumiri.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Apeluri în lanț (Chaining):</strong> Permite returnarea instanței curente pentru a înlănțui succesiv execuția mai multor metode pe aceeași linie.</li>
+            </ol>
+
+            <h3>E) Exemplu Practic: Clasa Array</h3>
+<pre><code>class Array {
+    private int[] t;
+    private int c;
+
+    public Array(int k) {
+        this.c = k;
+        this.t = new int[c];
+    }
+
+    public Array(Array other) {
+        this.c = other.c;
+        this.t = new int[c];
+        for (int i = 0; i &lt; this.c; i++) {
+            this.t[i] = other.t[i];
+        }
+    }
+
+    ~Array() {
+        System.out.println("Resursele alocate tabloului au fost eliberate din memorie.");
+    }
+}</code></pre>
+        </section>
+
+        <section id="cap3" class="glass-card">
+            <h2><i class="fa-solid fa-code-branch"></i> Cap. 3 Rezolvarea problemelor algoritmice</h2>
+
+            <div class="info-box accent-box">
+                <div class="info-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <div class="info-text">
+                    <strong>Enunț Problemă:</strong> Într-o pușculiță se află N monede de diferite valori cu greutatea totală G grame. Greutatea fiecărei monede de o anumită valoare este dată în tabelul ce urmează. Elaborați un program care determină suma minimă S care ar putea să fie în pușculiță pentru greutatea totală dată G.
+                </div>
+            </div>
+
+            <div class="table-container small-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Valoarea monedei (lei)</th>
+                            <th>Greutatea monedei (grame)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>1</td></tr>
+                        <tr><td>5</td><td>2</td></tr>
+                        <tr><td>10</td><td>3</td></tr>
+                        <tr><td>25</td><td>4</td></tr>
+                        <tr><td>50</td><td>5</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3><i class="fa-solid fa-terminal"></i> Implementarea optimizată în limbajul C++ (Programare Dinamică)</h3>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    int v[] = {1, 5, 10, 25, 50};
+    int w[] = {1, 2, 3, 4, 5};
+    int n = 5;
+    int G;
+
+    if (!(cin >> G)) return 0;
+
+    int dp[10005];
+    dp[0] = 0;
+
+    for (int i = 1; i <= G; i++) {
+        dp[i] = 1e9;
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = w[i]; j <= G; j++) {
+            if (dp[j - w[i]] != 1e9) {
+                if (dp[j - w[i]] + v[i] < dp[j]) {
+                    dp[j] = dp[j - w[i]] + v[i];
+                }
+            }
+        }
+    }
+
+    if (dp[G] == 1e9) {
+        cout << -1 << endl;
+    } else {
+        cout << dp[G] << endl;
+    }
+
+    return 0;
+}</code></pre>
+
+            <h3>Rezultatul execuției și analiza</h3>
+            <p>Pentru a evita apelurile recursive redundante care ar bloca execuția, algoritmul folosește Programarea Dinamică. Tabloul unidimensional dp stochează sumele minime posibile pentru fiecare sub-greutate de la 0 la G. Complexitatea de timp este redusă la O(N * G), oferind un răspuns instantaneu chiar și pentru valori ridicate ale greutății totale.</p>
+
+            <br>
+            <h3><i class="fa-solid fa-link"></i> Registrul Soluțiilor pe OnlineGDB</h3>
+            <p class="section-desc">Lista completă a modulelor algoritmice implementate și testate pe parcursul stagiului de practică:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Modul Problemă</th>
+                            <th>Descriere Resursă</th>
+                            <th>Link Soluție Live</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Problema m1.9</strong></td>
+                            <td>Implementare flux algoritmic - Modulul 1</td>
+                            <td><a href="https://onlinegdb.com/lv3YKt7pl" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m2.19</strong></td>
+                            <td>Prelucrare structuri de date - Modulul 2</td>
+                            <td><a href="https://onlinegdb.com/MUJrZmiPNM" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m3.13</strong></td>
+                            <td>Algoritm sortare și optimizare - Modulul 3 (Partea 1)</td>
+                            <td><a href="https://onlinegdb.com/QXYtx9Btkd" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m3.33</strong></td>
+                            <td>Tehnici de căutare analitică - Modulul 3 (Partea 2)</td>
+                            <td><a href="https://onlinegdb.com/KTZRyMXsX" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m4.8</strong></td>
+                            <td>Gestiune tablouri bidimensionale - Modulul 4</td>
+                            <td><a href="https://onlinegdb.com/Ka8SeV4dTF" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m5.7</strong></td>
+                            <td>Prelucrări șiruri de caractere - Modulul 5</td>
+                            <td><a href="https://onlinegdb.com/ZtnAWOOaH" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m6.19</strong></td>
+                            <td>Lucru cu fișiere și fluxuri text - Modulul 6 (Partea 1)</td>
+                            <td><a href="https://onlinegdb.com/xIuTXDAnq" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema m6.8</strong></td>
+                            <td>Analiză structurală de date complexe - Modulul 6 (Partea 2)</td>
+                            <td><a href="https://onlinegdb.com/CB5lDcwY6" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema POO 1</strong></td>
+                            <td>Clase, obiecte și constructori - Aplicație Practică</td>
+                            <td><a href="https://onlinegdb.com/01_PGoXeh" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Problema POO 16</strong></td>
+                            <td>Destructori și management dinamic al memoriei</td>
+                            <td><a href="https://onlinegdb.com/X-yh0MLB7S" target="_blank" class="status-badge done"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sarcina Suplimentara</strong></td>
+                            <td>Rezolvare completă variantă examinare OOP</td>
+                            <td><a href="https://onlinegdb.com/Lh-6T6fejK" target="_blank" class="status-badge complete"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accesează Cod</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="experiente" class="glass-card">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Experiențe și Concluzii Personale</h2>
+            <p>Pe parcursul celor 10 zile de stagiu, am dezvoltat o înțelegere profundă asupra modului în care se aplică conceptele algoritmice matematice pe probleme concrete din lumea reală. Am învățat să îmi gestionez timpul eficient prin planificarea zilnică a sarcinilor, să documentez riguros progresul obținut și să creez structuri de cod curate, ușor de întreținut și optimizate computațional.</p>
+        </section>
+
+        <section id="declaratie" class="declaratie-box">
+            <h2><i class="fa-solid fa-gavel"></i> DECLARAȚIE PRIVIND ASUMAREA RĂSPUNDERII</h2>
+            <p>Subsemnatul, <strong>Luca Damian</strong>, declar pe proprie răspundere că materialele prezentate în prezentul raport de stagiu se referă strict la propriile activități, cercetări și realizări individuale, în caz contrar urmând să suport toate consecințele în conformitate cu normele academice și legislația în vigoare.</p>
+            
+            <div class="semnatura-regiune">
+                <div class="sig-field"><strong>Data:</strong> <span class="line">11/06/2026</span></div>
+                <div class="sig-field"><strong>Nume, Prenume:</strong> <span class="line">Luca Damian</span></div>
+                <div class="sig-field"><strong>Semnătura:</strong> 
+                    <img src="signature.png" alt="Semnătura Oficială DL" class="signature-image">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 - Portofoliu Digital Academic de Practică. Creat cu pasiune pentru excelență tehnică.</p>
+            <div class="footer-icons">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
